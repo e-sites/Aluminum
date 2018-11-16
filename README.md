@@ -40,7 +40,7 @@ import XCTest
 import Aluminum
 
 class WelcomeRobot: Aluminum.Robot {
-	lazy var startButton = app.buttons["WelcomeStartButton"]
+    lazy var startButton = app.buttons["WelcomeStartButton"]
 
     override func requiredElements() -> [XCUIElement] {
         return [ startButton ]
@@ -54,7 +54,7 @@ class WelcomeRobot: Aluminum.Robot {
 }
 
 class ListRobot: Aluminum.Robot {
-	lazy var cell0 = app.cells["Cell0"]
+    lazy var cell0 = app.cells["Cell0"]
 
     override func requiredElements() -> [XCUIElement] {
         return [ cell0 ]
@@ -68,7 +68,7 @@ class ListRobot: Aluminum.Robot {
 }
 
 class DetailRobot: Aluminum.Robot, Aluminum.NavigableRobot {
-	lazy var titleLabel = app.staticTexts["DetailTitleLabel"]
+    lazy var titleLabel = app.staticTexts["DetailTitleLabel"]
 	
     var parent: ListRobot!
 
@@ -81,22 +81,22 @@ class DetailRobot: Aluminum.Robot, Aluminum.NavigableRobot {
         return [ titleLabel ]
     }
     
-	@discardableResult
-	func checkTitle() -> DetailRobot {
-		XCTAssertEqual(titleLabel.label, "Desired text")
-	}
+    @discardableResult
+    func checkTitle() -> DetailRobot {
+        XCTAssertEqual(titleLabel.label, "Desired text")
+    }
 }
 ```
 ## Run the test
 
 ```swift
 func testUI() {
-	let app = XCUIApplication()
+    let app = XCUIApplication()
 	
-	WelcomeRobot(app: app)
-	.openList()
-	.openDetail()
-	.checkTitle()
+    WelcomeRobot(app: app)
+    .openList()
+    .openDetail()
+    .checkTitle()
 }
 
 ```
