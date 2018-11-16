@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode10
+
+script:
+  - xcodebuild -project Aluminum.xcodeproj -scheme Aluminum -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' clean build
