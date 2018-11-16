@@ -30,3 +30,73 @@ And then
 ```
 pod install
 ```
+
+# Implementation
+
+## Create your robots
+```swift
+import Foundation
+import XCTest
+import Aluminum
+
+class WelcomeRobot: Aluminum.Robot {
+	lazy var startButton = app.buttons["WelcomeStartButton"]
+
+    override func requiredElements() -> [XCUIElement] {
+        return [ startButton ]
+    }
+
+    @discardableResult
+    func openList() -> ListRobot {
+        startButton()
+        return ListRobot(app: app)
+    }
+}
+
+class ListRobot: Aluminum.Robot {
+	lazy var cell0 = app.cells["Cell0"]
+
+    override func requiredElements() -> [XCUIElement] {
+        return [ cell0 ]
+    }
+
+    @discardableResult
+    func openDetail() -> DetailRobot {
+        cell0.tap()
+        return DetailRobot(app: app, parent: self)
+    }
+}
+
+class DetailRobot: Aluminum.Robot, Aluminum.NavigableRobot {
+	lazy var titleLabel = app.staticTexts["DetailTitleLabel"]
+	
+    var parent: ListRobot!
+
+    required convenience init(app: XCUIApplication, parent: ListRobot) {
+        self.init(app: app)
+        self.parent = parent
+    }
+
+    override func requiredElements() -> [XCUIElement] {
+        return [ titleLabel ]
+    }
+    
+	@discardableResult
+	func checkTitle() -> DetailRobot {
+		XCTAssertEqual(titleLabel.label, "Desired text")
+	}
+}
+```
+## Run the test
+
+```swift
+func testUI() {
+	let app = XCUIApplication()
+	
+	WelcomeRobot(app: app)
+	.openList()
+	.openDetail()
+	.checkTitle()
+}
+
+```
