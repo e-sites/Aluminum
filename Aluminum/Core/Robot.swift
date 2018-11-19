@@ -25,13 +25,13 @@ open class Robot: Robotable {
         return []
     }
 
-    public func assertExists(_ elements: [XCUIElement], timeout: TimeInterval = 5) {
+    open func assertExists(_ elements: [XCUIElement], timeout: TimeInterval = 5) {
         for element in elements {
             assertExists(element)
         }
     }
 
-    public func assertExists(_ element: XCUIElement, timeout: TimeInterval = 5) {
+    open func assertExists(_ element: XCUIElement, timeout: TimeInterval = 5) {
         let expectation = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true"), object: element)
         if XCTWaiter.wait(for: [expectation], timeout: timeout) != .completed {
             XCTAssert(false, "Element '\(element.identifier)' does not exist")
