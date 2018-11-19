@@ -13,6 +13,7 @@
 		C35D671A219F661A00F556C4 /* NavigableRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35D6717219F661A00F556C4 /* NavigableRobot.swift */; };
 		C35D671B219F661A00F556C4 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35D6718219F661A00F556C4 /* Robot.swift */; };
 		C35D671E219F67C600F556C4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35D671D219F67C500F556C4 /* XCTest.framework */; };
+		C3E1679621A2F1170080826C /* XCUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1679521A2F1170080826C /* XCUIElement+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		C35D6717219F661A00F556C4 /* NavigableRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigableRobot.swift; sourceTree = "<group>"; };
 		C35D6718219F661A00F556C4 /* Robot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		C35D671D219F67C500F556C4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3E1679521A2F1170080826C /* XCUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				C35D6718219F661A00F556C4 /* Robot.swift */,
 				C35D6717219F661A00F556C4 /* NavigableRobot.swift */,
+				C3E1679521A2F1170080826C /* XCUIElement+extensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E1679621A2F1170080826C /* XCUIElement+extensions.swift in Sources */,
 				C35D671A219F661A00F556C4 /* NavigableRobot.swift in Sources */,
 				C35D671B219F661A00F556C4 /* Robot.swift in Sources */,
 			);
