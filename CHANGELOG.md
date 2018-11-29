@@ -1,5 +1,8 @@
 # Changelog Aluminium
 
+## v1.1.2 (29-11-2018)
+- `canGoBack` for NavigableRobots
+
 ## v1.1.1 (29-11-2018)
 - Check for non existence of an element
 
