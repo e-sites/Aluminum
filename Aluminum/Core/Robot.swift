@@ -31,10 +31,10 @@ open class Robot: Robotable {
         }
     }
 
-    open func assertExists(_ element: XCUIElement, timeout: TimeInterval = 5) {
-        let expectation = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true"), object: element)
+    open func assertExists(_ element: XCUIElement, _ exists: Bool = true, timeout: TimeInterval = 5) {
+        let expectation = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == \(exists ? "true": "false")"), object: element)
         if XCTWaiter.wait(for: [expectation], timeout: timeout) != .completed {
-            XCTAssert(false, "Element '\(element.identifier)' does not exist")
+            XCTAssert(false, "Element '\(element.identifier)' does \(exists ? "not ": "") exist")
         }
     }
 
