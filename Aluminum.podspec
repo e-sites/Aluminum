@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.source         = { :git => "https://github.com/e-sites/#{s.name}.git", :tag => s.version.to_s }
   s.source_files   = "Aluminum/**/*.{h,swift}"
   s.requires_arc   = true
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.frameworks     = 'XCTest'
 end
