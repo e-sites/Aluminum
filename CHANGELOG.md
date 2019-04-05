@@ -1,5 +1,8 @@
 # Changelog Aluminium
 
+## v1.2.0 (05-04-2019)
+- Swift 5.0
+
 ## v1.1.2 (29-11-2018)
 - `canGoBack` for NavigableRobots
 

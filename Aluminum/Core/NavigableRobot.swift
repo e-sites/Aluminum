@@ -23,13 +23,13 @@ public extension NavigableRobot where Self: Robot {
     }
 
     @discardableResult
-    public func goBack() -> Parent {
+    func goBack() -> Parent {
         navigationBarBackButton.tap()
         return parent
     }
 
     @discardableResult
-    public func canGoBack(_ back: Bool = true) -> Self {
+    func canGoBack(_ back: Bool = true) -> Self {
         assertExists(app.navigationBars.buttons.element(boundBy: 0), back)
         return self
     }
