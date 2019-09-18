@@ -1,5 +1,8 @@
 # Changelog Aluminium
 
+## v1.2.1 (18-09-2019)
+- Swift PM
+
 ## v1.2.0 (05-04-2019)
 - Swift 5.0
 
