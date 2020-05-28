@@ -1,5 +1,8 @@
 # Changelog Aluminium
 
+## v1.2.2 (28-05-2020)
+- `@inlinable`
+
 ## v1.2.1 (18-09-2019)
 - Swift PM
 

@@ -16,7 +16,7 @@ public protocol Robotable {
 open class Robot: Robotable {
     public let app: XCUIApplication
 
-    public init(app: XCUIApplication) {
+    @inlinable public init(app: XCUIApplication) {
         self.app = app
         assertExists(requiredElements())
     }
